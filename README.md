@@ -106,24 +106,9 @@ p COLINC5
 ```
 The program listens for this, and shuts down.
 
+## Installation ##
 
-## Installation
-
-Use Zigi to clone this repository, thereby creating your own JCL and LOAD libraries.
-Edit the JCL members and submit.
-
-* Original installation instructions from Colin:
-* FTP the load/COLIN.ZWIRESHA.LOAD.XMIT to z/OS.  For example using
-* ```
-* site quote  cyl pri=1 recfm=fb blksize=800 lrecl=80
-* bin
-* put COLIN.ZWIRESHA.LOAD.XMIT 'myid.ZWIRESHA.LOAD.XMIT'
-* quit
-* ```
-* then use
-* ```
-* tso receive indsn('myid.ZWIRESHA.LOAD.XMIT')
-* ```
+Use Zigi to clone this repository, thereby creating your own JCL and LOAD libraries. Edit the JCL members and submit. There are no XMIT files in this repository.
 
 # Change history
 -  2025 Jun 22: Cloned from Colin Paice. Simplied to remove all the source and XMIT files, and add the load modules and JCL.
