@@ -1,4 +1,9 @@
 # zWireshark
+
+## Full credit to Colin Paice for creating this wonderful utility. ## 
+
+### This is a Zigi version of the original. ###
+
 Produces a network trace file from TCPIP on z/OS which Wireshark can use.
 For example
 ![example of a ping to z/OS](https://colinpaiceblog.files.wordpress.com/2024/02/zwireshark-1.jpg?w=999)
