@@ -111,8 +111,8 @@ The program listens for this, and shuts down.
 Use Zigi to clone this repository, thereby creating your own JCL and LOAD libraries. Edit the JCL members and submit. There are no XMIT files in this repository.
 
 # Change history
--  2025 Jun 22: Cloned from Colin Paice. Simplied to remove all the source and XMIT files, and add the load modules and JCL.
--  2025 Apr 15: Upate doc to clarify the meaning of inteface
+-  2025 Jun 22: Cloned from Colin Paice. Simplified to remove all the source and XMIT files, and add just the load modules and JCL.
+-  2025 Apr 15: Update doc to clarify the meaning of interface
 -  2024 Feb 24: Version 1.1 Add interface name to the printed output
 -  2024 Feb 24: Version 1.1 Add copyright and version to the load module
 -  2024 Feb 25: Version 1.1 Fix problem in printhex caused by invalid length being used.  Simplify the write code.
