@@ -1,0 +1,20 @@
+//ZWIRRACF   JOB 2486,MSGCLASS=X
+//*-----------------------------------------------------------
+//* Change <id> to the relevant user ID or group
+//*-----------------------------------------------------------
+//RACFCMDS EXEC PGM=IKJEFT01
+//SYSTSIN  DD *
+ RDEFINE SERVAUTH EZB.TRCSEC.*.*.ATTLS            UACC(NONE)
+ RDEFINE SERVAUTH EZB.TRCCTL.S0W1.TCPIP.DATTRACE  UACC(NONE)
+ RDEFINE SERVAUTH EZB.TRCCTL.S0W1.TCPIP.OPEN      UACC(NONE)
+ RDEFINE SERVAUTH EZB.TRCCTL.*.*.*                UACC(NONE)
+ PERMIT  EZB.TRCSEC.*.*.ATTLS            -
+    CL(SERVAUTH) ID(<id>) ACCESS(READ)
+ PERMIT  EZB.TRCCTL.S0W1.TCPIP.DATTRACE  -
+    CL(SERVAUTH) ID(<id>) ACCESS(READ)
+ PERMIT EZB.TRCCTL.S0W1.TCPIP.OPEN       -
+    CL(SERVAUTH) ID(<id>) ACCESS(READ)
+ PERMIT EZB.TRCCTL.*.*.*                 -
+    CL(SERVAUTH) ID(<id>) ACCESS(READ)
+ SETROPTS RACLIST(SERVAUTH) REFRESH
+//SYSTSPRT DD SYSOUT=*

@@ -1,7 +1,9 @@
-//COLINC5    JOB 1,MSGCLASS=H,COND=(4,LE) RESTART=RUN
-// SET LOADLIB=COLIN.ZWIRESHA.LOAD
+//ZWIRESHA   JOB 2486,MSGCLASS=X
+//*-----------------------------------------------------------
+//* --> Change <hlq> to the correct high-level qualifier
+//*-----------------------------------------------------------
 //RUN      EXEC PGM=TCPTRACE,REGION=0M,PARMDD=MYPARMS
-//STEPLIB  DD DISP=SHR,DSN=&LOADLIB
+//STEPLIB  DD DISP=SHR,DSN=<hlq>.ZWIRESHA.LOAD
 //SYSPRINT DD SYSOUT=*,DCB=(LRECL=200)
 //SYSOUT   DD SYSOUT=*
 //SYSERR   DD SYSOUT=*
@@ -10,11 +12,12 @@
 //            PATHMODE=SIRWXU
 //MYPARMS DD *
 /
- --DEBUG 0
- --INTERFACE TAP0
+ --DEBUG 1
  --WAIT 60
  --PAYLOAD 1024
+ --PORT 21
 /*
+ --INTERFACE TAP0
  --IP   10.1.0.2
  --COUNT 1000
  --IPV6 2001:db8::22b1:8b3:5051:d8db
