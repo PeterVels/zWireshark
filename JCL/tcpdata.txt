@@ -1,0 +1,21 @@
+//TCPDATA JOB 2486,'Encrypted text'
+//* Change <hlq> to your HLQ
+//RUN      EXEC PGM=TCPDATA,REGION=0M,PARMDD=MYPARMS
+//STEPLIB  DD DISP=SHR,DSN=<hlq>.ZWIRESHA.LOAD
+//SYSPRINT DD SYSOUT=*,DCB=(LRECL=200)
+//SYSOUT   DD SYSOUT=*
+//SYSERR   DD SYSOUT=*
+//* MYPARMS needs a / to split LE parms from program parms
+//*         needs a blank before each parm, because trailing blanks removed
+//MYPARMS DD *
+/
+ --IP   10.1.1.2
+ --WAIT 30
+ --PAYLOAD 1024
+ --DEBUG 1
+ --PRINT E
+ --PORT 8803
+/*
+ --COUNT 1000
+ --IPV6 2001:db8::22b1:8b3:5051:d8db
+//
